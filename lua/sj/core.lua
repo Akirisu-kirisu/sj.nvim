@@ -54,8 +54,8 @@ local function send_to_qflist(matches)
 		}
 	end
 	vim.fn.setqflist(qf_list)
+	vim.cmd("copen")  -- Opens the quickfix list
 end
-
 local function update_search_history(current_patterns, new_pattern)
 	if type(new_pattern) ~= "string" or #new_pattern == 0 then
 		return current_patterns
